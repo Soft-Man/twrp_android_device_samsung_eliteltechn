@@ -42,7 +42,9 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02000000 --tags_offset 0x01E00000 --board RILPG05A001
 #BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_TREE)/mkbootimg.mk
-USE_NINJA=false
+
+#USE_NINJA=false
+
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 67108864
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
@@ -72,13 +74,19 @@ TW_INCLUDE_NTFS_3G := true
 TW_NO_EXFAT_FUSE := true
 # No love for the wicked (device ships with M)
 TW_EXCLUDE_SUPERSU := true
-TW_MTP_DEVICE := "/dev/usb_mtp_gadget"
+#TW_MTP_DEVICE := "/dev/usb_mtp_gadget"
+TW_DEFAULT_LANGUAGE := ru
+TW_CUSTOM_THEME := device/samsung/eliteltechn/recovery/twres
 
 # Encryption support
 TW_INCLUDE_CRYPTO := true
 #TW_INCLUDE_CRYPTO_SAMSUNG := true
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+
+# Time Zone data
+PRODUCT_COPY_FILES += \
+bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
 
 # Debug flags
 TWRP_INCLUDE_LOGCAT := true

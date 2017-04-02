@@ -13,6 +13,10 @@ Add to `.repo/local_manifests/eliteltechn.xml`:
 	   path="vendor/qcom/opensource/cryptfs_hw"
 	   remote="github"
 	   revision="cm-14.1" />
+  <project path="kernel/samsung/msm8937"
+	   name="Soft-Man/android_kernel_samsung_msm8937"
+	   remote="github"
+	   revision="cm-14.1" />
 </manifest>
 ```
 
